@@ -1,5 +1,5 @@
 let express = require("express");
-let path = require("path");
+// let path = require("path"); // does path even need to be here?
 
 let app = express();
 let PORT = process.env.PORT || 3000;
@@ -7,9 +7,6 @@ let PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/survey", function(req, res){
-	res.sendFile(path.join(__dirname, "/app/public/survey.html"))
-})
 
 // ================================================================================
 // ROUTER
@@ -17,8 +14,8 @@ app.get("/survey", function(req, res){
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 
-require("./app/routing/apiRoutes");
-require("./app/routing/htmlRoutes");
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 // =============================================================================
 // LISTENER
