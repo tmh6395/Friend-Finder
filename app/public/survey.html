@@ -12,43 +12,31 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 	<style>
 		html,
 		body {
 			background-color: gray;
 			min-height: 100%;}
-
 		.jumbotron {
 			background-color: lightgray;
 			padding-left: 5rem;
 			padding-right: 5rem;}
-
-		#title-text,
-		#extra-links {text-align: center;}
-
-		.row,
-		#submit-button {width: 100%;}
-
+		#title-text{text-align: center;}
+		.row, #submit-button {width: 100%;}
 		h2 {font-size: 30px;}
-
 		p {font-size: 30px;}
-
 		#extra-links {
+			text-align: center;
 			font-size: 20px;
 			margin-top: 1rem;}
-
 		hr {background-color: darkgray;}
-
 		.select-choice {width: 150px;}
-
 		img {width: 100%;}
 	</style>
 	<script src="https://code.jquery.com/jquery.js"></script>
 </head>
 
 <body>
-
 	<div class="row">
 		<div class="col-md-2"></div>
 		<div class="col-md-8 mb-4">
@@ -222,7 +210,6 @@
 		<div class="col-md-2"></div>
 	</div>
 
-
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 		aria-hidden="true">
@@ -297,7 +284,6 @@
 				],
 				scoreDifference: 0
 			};
-
 
 			// This function calculates the differences in scores for each potential friend
 			function calculateScoreDifferences(data) {

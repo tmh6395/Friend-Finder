@@ -16,18 +16,20 @@
 		.jumbotron {
 			background-color: lightgray;
 			padding-left: 5rem;
-			padding-right: 5rem;
-		}
+			padding-right: 5rem;}
 		#title-text {text-align: center;}
 		.row {width: 100%;}
 		h2 {font-size: 30px;}
 		p {font-size: 30px;}
-		hr {background-color: darkgray;}
+		#extra-links {
+			text-align: center;
+			font-size: 20px;
+			margin-top: 1rem;}
+		hr {background-color: darkgray; width: 100%;}
 	</style>
 </head>
 
 <body>
-
 	<div class="row">
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
@@ -44,6 +46,10 @@
 				<a href="/survey"><button class="btn btn-lg btn-primary" id="survey-button">Go to survey</button></a>
 			</div>
 			<!-- links to api/friends & github repo-->
+			<hr />
+			<p id="extra-links"><a href="/api/friends" target="_blank">Link to /api/friends</a> | <a
+				href="https://github.com/tmh6395/Friend-Finder" target="_blank">Link to this project's
+				Github Repository</a></p>
 		</div>
 		<div class="col-md-2"></div>
 	</div>
