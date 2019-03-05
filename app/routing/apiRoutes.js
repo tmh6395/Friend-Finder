@@ -1,6 +1,4 @@
-
 let friendData = require("../data/friends");
-
 
 module.exports = function (app) {
 
@@ -10,19 +8,11 @@ module.exports = function (app) {
 		res.json(friendData);
 	});
 
-
-
-	// A POST routes /api/friends. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic.
-	// use req.body?
-
+	// A POST routes /api/friends. This will post the JSON of user input to the designated route.
 	app.post('/api/friends', function (req, res){
-		// calculate info here
-		console.log("testgrounds");
 		friendData.push(req.body);
 
 		res.json(true);
 	});
-
-
 
 };

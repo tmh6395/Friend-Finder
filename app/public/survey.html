@@ -6,54 +6,43 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Survey Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
-
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 
 	<style>
 		html,
 		body {
 			background-color: gray;
-			min-height: 100%;
-		}
+			min-height: 100%;}
 
 		.jumbotron {
 			background-color: lightgray;
 			padding-left: 5rem;
-			padding-right: 5rem;
-		}
+			padding-right: 5rem;}
 
-		#title-text {
-			text-align: center;
-		}
+		#title-text,
+		#extra-links {text-align: center;}
 
 		.row,
-		#submit-button {
-			width: 100%;
-		}
+		#submit-button {width: 100%;}
 
-		h2 {
-			font-size: 30px;
-		}
+		h2 {font-size: 30px;}
 
-		p {
-			font-size: 30px;
-		}
+		p {font-size: 30px;}
 
-		hr {
-			background-color: darkgray;
-		}
+		#extra-links {
+			font-size: 20px;
+			margin-top: 1rem;}
 
-		.select-choice {
-			width: 150px;
-		}
+		hr {background-color: darkgray;}
+
+		.select-choice {width: 150px;}
+
+		img {width: 100%;}
 	</style>
 	<script src="https://code.jquery.com/jquery.js"></script>
 </head>
@@ -218,54 +207,47 @@
 					</select>
 				</form>
 
-
 				<button type="button" class="btn btn-primary mt-4" id="submit-button" data-toggle="modal"
 					data-target="#exampleModal">
 					Submit Results
 				</button>
 
 			</div>
-			<!-- links to /api/friends & github repo go here -->
+			<hr />
+			<!-- Links to /api/friends & github repo go here -->
+			<p id="extra-links"><a href="/api/friends" target="_blank">Link to /api/friends</a> | <a
+					href="https://github.com/tmh6395/Friend-Finder" target="_blank">Link to this project's
+					Github Repository</a></p>
 		</div>
 		<div class="col-md-2"></div>
 	</div>
 
 
-
-
-	<!-- Modal body -->
+	<!-- Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 		aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Thank You for Using Friend Finder!</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-
 				<div class="modal-body" id="modal-failure">
 					Please give both your name and a link to an image of you!
 				</div>
-
-
 				<div class="modal-body" id="modal-success">
-					<div id="name-div"></div>
 					<div>
 						<img id="image-link" src="" alt="Could not find the image" />
 					</div>
 				</div>
-
-
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
 		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -280,19 +262,20 @@
 
 <script type="text/javascript">
 
-
-
+	// Click handler for the submit/modal button.
 	$("#submit-button").on("click", function (event) {
 		event.preventDefault();
 		let newName = $("#name").val().trim();
 		let newPhoto = $("#url").val().trim();
-
+		// If either the name or photo URL text boxes are empty, shows a modal saying to reinput info.
 		if (!newName || !newPhoto) {
+			$("#exampleModalLabel").html("Our apologies, but there was an issue.");
 			$("#modal-success").hide();
 			$("#modal-failure").show();
-			console.log("you did a no-no");
-		}	// end of "if name or photo is blank" check
-
+		}
+		// Else shows the modal div that houses the info of our friend-to-be,
+			// and also creates a new friend object (you), which will be posted
+			// to /api/friends later.
 		else {
 			$("#modal-failure").hide();
 			$("#modal-success").show();
@@ -315,90 +298,55 @@
 				scoreDifference: 0
 			};
 
-			// User 1: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
-			// User 2: [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]
-			// Total Difference: 2 + 1 + 2 = 5
 
-
-
-			console.log("newFriend: " + newFriend.scores);
-
+			// This function calculates the differences in scores for each potential friend
 			function calculateScoreDifferences(data) {
 				let currentScoreCheck = 0;
 				for (let i in data) {
-					// console.log(data[i].scores);
 					let totalDifference = 0;
 					for (let j in data[i].scores) {
-						// console.log("test" + data[i].scores[j]);
-						console.log(newFriend.scores[i] + " - " + data[i].scores[j]);
 						totalDifference += (Math.abs(newFriend.scores[i] - data[i].scores[j]));
 					}
-					// this little area between for-loops marks the space between each cat
-					console.log("total difference = ", totalDifference);
+					// (this little area between the for-loop-ending-brackets marks the space between each cat)
+
+					// It is here where we set each cat's "score difference". This value represents the cat's
+						// score difference relative to the newly entered person (your info).
+					// The score difference is set to 0 to reset it for the next person to input their info; otherwise
+						// results would carry over to the next input and would not be accurate
 					data[i].scoreDifference = totalDifference;
-					console.log("score difference = ", data[i].scoreDifference);
-
 					data[i].currentScoreCheck = data[i].scoreDifference;
-					console.log(data[i].currentScoreCheck);
-
+					data[i].scoreDifference = 0;
 				}
 
-				// Give each object a scoreDifference variable that measures its relativity with the newly imported person [X]
-
-				// Make code below that cycles through each object's "scoreDifference"
-
+				// This part of the code updates the modal that shows the best match. It first presets a variable very high,
+					// then checks the score of each potential friend. Every time a new friend turns up with a better score,
+					// the modal gets updated with the new friend's name and image.
 				let bestFriendMatch = 99;
 				for (let i in data) {
-
 					if (data[i].currentScoreCheck < bestFriendMatch) {
 						bestFriendMatch = data[i].currentScoreCheck;
-						$("#name-div").html(data[i].name);
+						$("#image-link").removeAttr("src");
+						$("#exampleModalLabel").html(data[i].name);
 						$("#image-link").attr("src", data[i].photo);
 					}
-
-
 				}
-
-
+				bestFriendMatch = 99;
 			}
 
 
-
-
-
-
-
-			$.get("/api/friends", function (data) {
+			// GET method: get info from /api/friends
+			$.get("/api/friends",function (data) {
 				if (data) {
-
-					// calculate score differences here
 					calculateScoreDifferences(data);
-					// console.log("data: ", data);
-
-
-
-
 				}
-			})
-
-
-
-
-
-
-
-
+			});
 
 			// POST method: post newFriend to /api/friends
-			$.post("/api/friends", newFriend,
-				function (data) {
-					if (data) console.log("Success!");
-					else console.log("No success.");
-				}
-			);
+			$.post("/api/friends", newFriend, function (data) {
+				if (data) console.log("POST successful!");
+				else console.log("POST not successful: no data to POST.");
+			});
 
-		}	// end of else
-
-
+		} // end of main else
 	});
 </script>

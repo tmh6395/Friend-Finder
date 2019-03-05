@@ -1,5 +1,4 @@
 let express = require("express");
-// let path = require("path"); // does path even need to be here?
 
 let app = express();
 let PORT = process.env.PORT || 3000;
@@ -7,20 +6,12 @@ let PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// ================================================================================
-// ROUTER
-// The below points our server to a series of "route" files.
-// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
-// ================================================================================
-
+// The following two lines of code will enable our server.js to access both the api routes
+	// and html routes, so to use the application one only needs to start server.js
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
-// =============================================================================
-// LISTENER
-// The below code effectively "starts" our server
-// =============================================================================
-
+// This will start the server and begin listening for any requests
 app.listen(PORT, function() {
 	console.log("App listening on PORT " + PORT);
   });
