@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -18,17 +18,41 @@
 
 
 	<style>
-		html, body {background-color: gray; min-height: 100%;}
+		html,
+		body {
+			background-color: gray;
+			min-height: 100%;
+		}
+
 		.jumbotron {
 			background-color: lightgray;
 			padding-left: 5rem;
-			padding-right: 5rem;}
-		#title-text {text-align: center;}
-		.row {width: 100%;}
-		h2 {font-size: 30px;}
-		p {font-size: 30px;}
-		hr {background-color: darkgray;}
-		.select-choice{width: 150px;}
+			padding-right: 5rem;
+		}
+
+		#title-text {
+			text-align: center;
+		}
+
+		.row {
+			width: 100%;
+		}
+
+		h2 {
+			font-size: 30px;
+		}
+
+		p {
+			font-size: 30px;
+		}
+
+		hr {
+			background-color: darkgray;
+		}
+
+		.select-choice {
+			width: 150px;
+		}
 	</style>
 	<script src="https://code.jquery.com/jquery.js"></script>
 </head>
@@ -45,7 +69,7 @@
 				<form>
 					<div class="form-group">
 						<label for="name">Name (Required)</label>
-						<input type="name" class="form-control" id="name" aria-describedby="name" />
+						<input type="text" class="form-control" id="name" aria-describedby="name" />
 					</div>
 					<div class="form-group">
 						<label for="url">Link to Photo Image (Required)</label>
@@ -58,7 +82,7 @@
 					<h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
 					<label for="question-one"></label>
 					<select class="custom-select custom-select-sm select-choice" id="question-one">
-						<option selected>Select an Option</option>
+						<option disabled>Select an Option</option>
 						<option value="1">1 (Strongly Disagree)</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -67,12 +91,12 @@
 					</select>
 
 					<hr />
-					
+
 					<h3>Question 2</h3>
 					<h4>Generally speaking, you rely more on your experience than your imagination.</h4>
 					<label for="question-two"></label>
 					<select class="custom-select custom-select-sm select-choice" id="question-two">
-						<option selected>Select an Option</option>
+						<option disabled>Select an Option</option>
 						<option value="1">1 (Strongly Disagree)</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -85,35 +109,7 @@
 					<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
 					<label for="question-three"></label>
 					<select class="custom-select custom-select-sm select-choice" id="question-three">
-						<option selected>Select an Option</option>
-						<option value="1">1 (Strongly Disagree)</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5 (Strongly Agree)</option>
-					</select>
-					
-					<hr />
-					
-					<h3>Question 4</h3>
-					<h4>You rarely do something just out of sheer curiosity.</h4>
-					<label for="question-four"></label>
-					<select class="custom-select custom-select-sm select-choice" id="question-four">
-						<option selected>Select an Option</option>
-						<option value="1">1 (Strongly Disagree)</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5 (Strongly Agree)</option>
-					</select>
-					
-					<hr />
-					
-					<h3>Question 5</h3>
-					<h4>People can rarely upset you.</h4>
-					<label for="question-five"></label>
-					<select class="custom-select custom-select-sm select-choice" id="question-five">
-						<option selected>Select an Option</option>
+						<option disabled>Select an Option</option>
 						<option value="1">1 (Strongly Disagree)</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -122,68 +118,97 @@
 					</select>
 
 					<hr />
-					
+
+					<h3>Question 4</h3>
+					<h4>You rarely do something just out of sheer curiosity.</h4>
+					<label for="question-four"></label>
+					<select class="custom-select custom-select-sm select-choice" id="question-four">
+						<option disabled>Select an Option</option>
+						<option value="1">1 (Strongly Disagree)</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5 (Strongly Agree)</option>
+					</select>
+
+					<hr />
+
+					<h3>Question 5</h3>
+					<h4>People can rarely upset you.</h4>
+					<label for="question-five"></label>
+					<select class="custom-select custom-select-sm select-choice" id="question-five">
+						<option disabled>Select an Option</option>
+						<option value="1">1 (Strongly Disagree)</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5 (Strongly Agree)</option>
+					</select>
+
+					<hr />
+
 					<h3>Question 6</h3>
 					<h4>It is often difficult for you to relate to other people’s feelings.</h4>
 					<label for="question-six"></label>
 					<select class="custom-select custom-select-sm select-choice" id="question-six">
-						<option selected>Select an Option</option>
+						<option disabled>Select an Option</option>
 						<option value="1">1 (Strongly Disagree)</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 						<option value="4">4</option>
 						<option value="5">5 (Strongly Agree)</option>
 					</select>
-					
+
 					<hr />
-					
+
 					<h3>Question 7</h3>
 					<h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
 					<label for="question-seven"></label>
 					<select class="custom-select custom-select-sm select-choice" id="question-seven">
-						<option selected>Select an Option</option>
+						<option disabled>Select an Option</option>
 						<option value="1">1 (Strongly Disagree)</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 						<option value="4">4</option>
 						<option value="5">5 (Strongly Agree)</option>
 					</select>
-					
+
 					<hr />
-					
+
 					<h3>Question 8</h3>
 					<h4>You rarely get carried away by fantasies and ideas.</h4>
 					<label for="question-eight"></label>
 					<select class="custom-select custom-select-sm select-choice" id="question-eight">
-						<option selected>Select an Option</option>
+						<option disabled>Select an Option</option>
 						<option value="1">1 (Strongly Disagree)</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 						<option value="4">4</option>
 						<option value="5">5 (Strongly Agree)</option>
 					</select>
-					
+
 					<hr />
-					
+
 					<h3>Question 9</h3>
-					<h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+					<h4>You think that everyone’s views should be respected regardless of whether they are supported by
+						facts or not.</h4>
 					<label for="question-nine"></label>
 					<select class="custom-select custom-select-sm select-choice" id="question-nine">
-						<option selected>Select an Option</option>
+						<option disabled>Select an Option</option>
 						<option value="1">1 (Strongly Disagree)</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 						<option value="4">4</option>
 						<option value="5">5 (Strongly Agree)</option>
 					</select>
-					
+
 					<hr />
-					
+
 					<h3>Question 10</h3>
 					<h4>You feel more energetic after spending time with a group of people.</h4>
 					<label for="question-ten"></label>
 					<select class="custom-select custom-select-sm select-choice" id="question-ten">
-						<option selected>Select an Option</option>
+						<option disabled>Select an Option</option>
 						<option value="1">1 (Strongly Disagree)</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -191,7 +216,17 @@
 						<option value="5">5 (Strongly Agree)</option>
 					</select>
 				</form>
-				<button class="btn btn-lg btn-primary mt-4" id="submit-button" style="width: 100%">Submit Results</button>
+
+
+				<button type="button" class="btn btn-primary" id="submit-button" data-toggle="modal"
+					data-target="#exampleModal">
+					Submit Results
+				</button>
+
+
+				<!-- <button type="button" class="btn btn-lg btn-primary mt-4" id="submit-button" style="width: 100%" data-toggle="modal" data-target="exampleModal">Submit
+					Results
+				</button> -->
 
 			</div>
 			<!-- links to /api/friends & github repo go here -->
@@ -199,49 +234,105 @@
 		<div class="col-md-2"></div>
 	</div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-	</body>
+
+
+	<!-- modal body (failure) -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body" id="modal-failure">
+					Please give both your name and a link to an image of you!
+				</div>
+
+
+				<div class="modal-body" id="modal-success">
+					Insert name and picture here
+				</div>
+
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+
+</body>
 
 </html>
 
 <script type="text/javascript">
-	$("#submit-button").on("click", function(event){
+
+
+
+	$("#submit-button").on("click", function (event) {
 		event.preventDefault();
+		let newName = $("#name").val().trim();
+		let newPhoto = $("#url").val().trim();
 
-		// Make "newFriend" object and insert values into it
-		let newFriend = {
-			name: $("#name").val().trim(),
-			photo: $("#url").val().trim(),
-			scores: [
-				$("#question-one").val(),
-				$("#question-two").val(),
-				$("#question-three").val(),
-				$("#question-four").val(),
-				$("#question-five").val(),
-				$("#question-six").val(),
-				$("#question-seven").val(),
-				$("#question-eight").val(),
-				$("#question-nine").val(),
-				$("#question-ten").val()
-			]
-		};
+		if (!newName || !newPhoto) {
+			$("#modal-success").hide();
+			$("#modal-failure").show();
+			console.log("you did a no-no");
+		}	// end of "if name or photo is blank" check
 
-		// POST method: post newFriend to /api/friends
-		$.post("/api/friends", newFriend,
-			function(data){
-				if (data) console.log("Success!");
-				else console.log("No success.");
-			}
-		);
+		else {
+			$("#modal-failure").hide();
+			$("#modal-success").show();
+			// Make "newFriend" object and insert values into it
+			let newFriend = {
+				name: newName,
+				photo: newPhoto,
+				scores: [
+					$("#question-one").val(),
+					$("#question-two").val(),
+					$("#question-three").val(),
+					$("#question-four").val(),
+					$("#question-five").val(),
+					$("#question-six").val(),
+					$("#question-seven").val(),
+					$("#question-eight").val(),
+					$("#question-nine").val(),
+					$("#question-ten").val()
+				]
+			};
 
+			$.get("/api/friends", function (data) {
+				if (data) {
+					console.log("tsesgvdxfes");
+					console.log("data: " + data);
+				}
+			})
+			console.log(newFriend);
 
+			// POST method: post newFriend to /api/friends
+			$.post("/api/friends", newFriend,
+				function (data) {
+					if (data) console.log("Success!");
+					else console.log("No success.");
+				}
+			);
 
+		}	// end of else
 
 
 	});
 </script>
-

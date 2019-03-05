@@ -6,9 +6,7 @@ module.exports = function (app) {
 
 	// A GET route with the url /api/friends. This will be used to display a JSON of all possible friends.
 	app.get('/api/friends', function (req, res) {
-		// console.log("req: " + req);
-		// console.log("res: " + res);
-		// console.log("friendData: " + friendData);
+		// console.log("friendData: " + friendData[0].name);
 		res.json(friendData);
 	});
 
@@ -18,7 +16,7 @@ module.exports = function (app) {
 	// use req.body?
 
 	app.post('/api/friends', function (req, res){
-		
+		// calculate info here
 		console.log("testgrounds");
 		friendData.push(req.body);
 
