@@ -251,9 +251,9 @@
 
 
 				<div class="modal-body" id="modal-success">
-					<div id="name-div">NAME: </div>
-					<div id="image-div">
-						<img src="" alt="Could not find the image" />
+					<div id="name-div"></div>
+					<div>
+						<img id="image-link" src="" alt="Could not find the image" />
 					</div>
 				</div>
 
@@ -349,15 +349,23 @@
 
 				let bestFriendMatch = 99;
 				for (let i in data) {
-					if (data[i].currentScoreCheck < bestFriendMatch){
+
+					if (data[i].currentScoreCheck < bestFriendMatch) {
 						bestFriendMatch = data[i].currentScoreCheck;
+						$("#name-div").html(data[i].name);
+						$("#image-link").attr("src", data[i].photo);
 					}
-					
+
 
 				}
 
 
 			}
+
+
+
+
+
 
 
 			$.get("/api/friends", function (data) {
